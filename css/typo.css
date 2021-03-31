@@ -1,0 +1,82 @@
+/* POSLEDNÍ ÚPRAVA 31.03.2021 */
+
+:root {
+    --main-color: #A27035;
+    --secondary-color: #B88E4A;
+    --light-grey: #f2f2f2;
+    --silver: #c0c0c0;
+    --dark-grey: #808080;
+    --bg-color: rgba(184, 142, 74, 0.6);
+    --darkmode-lighter: rgb(38,42,43);
+    --darkmode-darker: #0f1112; 
+}
+
+html {
+    font-family: 'PT Sans', sans-serif !important;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* hidden h1 tag */
+h1{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h2{
+    font-size: 2em;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+h3{
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+h4{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* bigger texts */
+.caption {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0; 
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 4em;
+    font-weight: 300;
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+main section {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.material-icons {
+    vertical-align: bottom;
+}
