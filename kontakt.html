@@ -22,11 +22,7 @@
         <link rel="stylesheet" href="css/style-main.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    
-        <!--
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> 
-        -->       
+          
         <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -40,41 +36,34 @@
         </script>
     </head>
     <body>
-    <header>
-        <div class="panel">
-            <div class="logo"><a href="index.html"><h1><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></h1></a></div>
-            <div class="admin-area">
-                <a href="admin.php"><i class="fas fa-user"></i> <span class="hiding"> Administrace</span></a>
-                <a href="login.php"><i class="fas fa-sign-in-alt"></i> <span class="hiding"> Login</span></a>
+        <header>
+            <div class="panel">
+                <div class="logo"><a href="index.html"><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></a></div>
+                <div class="admin-area">
+                    <a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> <span class="hiding"> Zákaznický portál</span></a>
+                </div>
             </div>
-        </div>
-        <div class="topnav-wrap">
-            <nav class="topnav" id="topnav">
-                <ul class="menu" id="menu">
-                    <li class="menu-item menu-item-icon"><a href="javascript:void(0)" onclick="mobileMenuFunction()"><i id="menu-icon" class="fa fa-bars"></i></a></li>
-                    <li class="menu-item"><a class="active" href="index.html">Domů</a></li>
-                    <li class="menu-item">
-                        <a href="index.html#nase-sluzby">Naše služby</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu-item menu-item-dropdown"><a href="katastr-nemovitosti.html">Katastr nemovitostí</a></li>
-                            <li class="menu-item menu-item-dropdown"><a href="inzenyrska-geodezie.html">Inženýrská geodézie</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
-                    <li class="menu-item"><a href="reference.html">Reference</a></li>
-                    <li class="menu-item"><a href="cenik.html">Ceník</a></li>
-                    <li class="menu-item">
-                        <a class="disabled">Zákaznický portál</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu-item menu-item-dropdown"><a href="https://form.geoline.org/index.php" target="_blank">Objednávkový formulář Progres</a></li>
-                            <li class="menu-item menu-item-dropdown"><a href="">Objednávkový formulář ČEZ</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            <div class="topnav-wrap">
+                <nav class="topnav" id="topnav">
+                    <ul class="menu" id="menu">
+                        <li class="menu-item menu-item-icon"><a href="javascript:void(0)" onclick="mobileMenuFunction()"><i id="menu-icon" class="fa fa-bars"></i></a></li>
+                        <li class="menu-item"><a class="active" href="index.html">Domů</a></li>
+                        <li class="menu-item">
+                            <a href="index.html#nase-sluzby">Naše služby</a>
+                            <ul class="dropdown-menu">
+                                <li class="menu-item menu-item-dropdown"><a href="katastr-nemovitosti.html">Katastr nemovitostí</a></li>
+                                <li class="menu-item menu-item-dropdown"><a href="inzenyrska-geodezie.html">Inženýrská geodézie</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
+                        <li class="menu-item"><a href="reference.html">Reference</a></li>
+                        <li class="menu-item"><a href="cenik.html">Ceník</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> <span class="hiding"> Zákaznický portál</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     <main class="main">
         <section>
             <h2>Kontakt</h2>
@@ -99,43 +88,44 @@
                         <div class="contact-card-description">
                             <p class="caption">Ing. Petr Svoboda</p>
                             <p>Společník</p>
-                            <p><span class="material-icons">mail</span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></p>
-                            <p><span class="material-icons">call</span><a href="tel:+420608020215"> 608 020 215</a></p>
+                            <p><span class="icon-envelop"></span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420608020215"> 608 02 02 15</a></p>
                         </div>
                     </div>
                     <div class="contact-card" id="vl">
                         <div class="contact-img">
-                            <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                            <img src="img/other/person.png" alt="Vlastimil Coufal">
                         </div>
                         <div class="contact-card-description">
                             <p class="caption">Vlastimil Coufal</p>
                             <p>Společník</p>
-                            <p><span class="material-icons">mail</span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></p>
-                            <p><span class="material-icons">call</span><a href="tel:+420608987874"> 608978874</a></p>
+                            <p><span class="icon-envelop"></span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420608987874"> 608 978 874</a></p>
                         </div>
                     </div>
                     <div class="contact-card" id="placeholder">
                         <div class="contact-img">
-                            <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                            <img src="img/other/person.png" alt="placeholder1">
                         </div>
                         <div class="contact-card-description">
                             <p class="caption">Ondřej</p>
                             <p>Webdesigner</p>
-                            <p><span class="material-icons">mail</span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
-                            <p><span class="material-icons">call</span><a href="tel:+420777888999"> 775 510 215</a></p>
+                            <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420777888999"> 775 510 215</a></p>
                         </div>
                     </div>
                     <div class="contact-card" id="placeholder2">
                         <div class="contact-img">
-                            <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                            <img src="img/other/person.png" alt="placeholder2">
                         </div>
                         <div class="contact-card-description">
                             <p class="caption">Ondřej</p>
                             <p>Webdesigner</p>
-                            <p><span class="material-icons">mail</span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
-                            <p><span class="material-icons">call</span><a href="tel:+420777777777"> 775 510 215</a></p>
+                            <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a>
+                            </p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420777777777"> 775 510 215</a></p>
                         </div>
-                    </div>
+                    </div>   
                 </div>  
         </section>
         <section>
@@ -177,23 +167,43 @@
     </main>
     <footer>
         <div class="contacts">
-            <div class="footer-box">
-                <span class="material-icons">place</span>
-                <p>Kašparova 186/23,</p>
-                <p>Rochlice, 460 06 Liberec</p>
+            <div class="footer-box footer-box-contacts">
+                <div class="footer-box">
+                    <span class="icon-location"></span>
+                    <p>Kašparova 186/23,</p>
+                    <p>Rochlice, 460 06 Liberec</p>
+                </div>
+                <div class="footer-box">
+                    <span class="icon-envelop"></span>
+                    <p><a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
+                </div>
+                <div class="footer-box">
+                    <span class="icon-phone"></span>
+                    <p><a href="tel:+420485104234">+420 485 104 234</a></p>
+                    <p>Po-Pá 8 - 17</p>
+                </div>
             </div>
-            <div class="footer-box">
-                <span class="material-icons">mail</span>
-                <p><a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
+            <div class="footer-box footer-box-nav">
+                <a class="link" href="index.html#nase-sluzby">Naše služby</a>
+                <a class="link" href="">Katastr nemovitostí</a>
+                <a class="link" href="">Inženýrská geodézie</a>
+                <a class="link" href="">O nás</a>
+                <a class="link" href="">Reference</a>
+                <a class="link" href="">Ceník</a>
+                <a class="link" href="">Kontakt</a>
             </div>
-            <div class="footer-box">
-                <span class="material-icons">call</span>
-                <p><a href="tel:+420485104234">+420 485 104 234</a></p>
-                <p>Po-Pá 8 - 17</p>
+            <div class="footer-box footer-box-icons">
+                <a class="button button-footer" href="https://goo.gl/maps/tL4XGtbSeiwCiP3p9"><span class="icon-location"></span></a>
+                <a class="button button-footer" href="mailto:geoline@geoline.org"><span class="icon-envelop"></span></a>
+                <a class="button button-footer" href="tel:+420485104234"><span class="icon-phone"></span></a>
             </div>
         </div>
-        <p class="copyright"> v0.5 © 2021 GEOLINE CZ v.o.s., Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
-        <button onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+        <div class="copyright">
+            <p>v0.6 © 2021 GEOLINE CZ v.o.s.</p>
+            <p>Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
+
+        </div>
+        <a onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></a>
     </footer>
     <!-- scroll to top button -->
     <script>
@@ -222,11 +232,11 @@
 
           if (menu.className === "topnav") {
             menu.className += " responsive";
-            menuicon.className += "fas fa-times";
+            menuicon.className == "fas fa-times";
 
           } else {
             menu.className = "topnav";
-            menuicon.className += "fas fa-bars";
+            menuicon.className == "fas fa-bars";
           }
         }
     </script>

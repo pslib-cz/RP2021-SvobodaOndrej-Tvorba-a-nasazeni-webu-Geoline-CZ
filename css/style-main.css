@@ -14,7 +14,7 @@
 }
 
 html {
-    font-family: 'PT Sans', sans-serif !important;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
 }
@@ -31,36 +31,84 @@ h1{
 }
 
 h2{
-    font-size: 2em;
+    font-size: 2rem;
     color: var(--main-color);
     border-bottom: 2px solid var(--main-color);
 }
 
 h3{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
 h4{
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
-/* bigger texts */
-.caption {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: 0; 
-}
-
-.heading {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 4em;
-    font-weight: 300;
-    margin: 0;
-}
-
+/* icomoon */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?t1nvuf');
+    src:  url('../fonts/icomoon.eot?t1nvuf#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?t1nvuf') format('truetype'),
+      url('../fonts/icomoon.woff?t1nvuf') format('woff'),
+      url('../fonts/icomoon.svg?t1nvuf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-phone:before {
+    content: "\e942";
+  }
+  .icon-envelop:before {
+    content: "\e945";
+  }
+  .icon-location:before {
+    content: "\e947";
+  }
+  .icon-location2:before {
+    content: "\e948";
+  }
+  .icon-mobile:before {
+    content: "\e958";
+  }
+  .icon-arrow-up:before {
+    content: "\ea32";
+  }
+  .icon-arrow-up2:before {
+    content: "\ea3a";
+  }
+  .icon-arrow-right2:before {
+    content: "\ea3c";
+  }
+  .icon-circle-up:before {
+    content: "\ea41";
+  }
+  .icon-circle-right:before {
+    content: "\ea42";
+  }
+  .icon-mail4:before {
+    content: "\ea86";
+  }
+  
+/*override default*/
 figure {
     margin: 0;
 }
@@ -70,8 +118,9 @@ a {
     color: inherit;
 }
 
-p {
-    font-size: 1.1em;
+a:hover {
+    color: var(--secondary-color);
+    transition: ease-in .2s;
 }
 
 main section {
@@ -79,20 +128,32 @@ main section {
     margin-bottom: 1em;
 }
 
+header {
+    font-size: 1.1rem;
+}
+
+/* bigger texts */
+.caption {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0; 
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+
+/* material icons fix */
 .material-icons {
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
 /* components */
-
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: cover 99%
-*/
-
-/* POSLEDNÍ ÚPRAVA 31.03.2021 */
 
 /* topmenu */
 
@@ -121,31 +182,36 @@ main section {
         -ms-flex-pack: justify;
             justify-content: space-between;
     color: white;
+    height: 100%;
 }
 
 .menu-item a {
-    display: inline-block;
+    display: block;
     width: 100%;
     padding: 1em;
     text-decoration: none;
     color: inherit;
     text-align: center;
-    vertical-align: middle;
 }
+
 
 .menu-item-icon {
     display: block;
+    margin-left: auto;
+    text-align: right;
 }
 
 .menu-item-icon a {
+    margin-left: auto;
     width: auto;
+    text-align: right;
 }
 
 .menu-item:hover {
-    -webkit-transition: .25s ease-out;
-    -o-transition: .25s ease-out;
-    -moz-transition: .25s ease-out;
-    transition: .25s ease-out;
+    -webkit-transition: .25s ease-in;
+    -o-transition: .25s ease-in;
+    -moz-transition: .25s ease-in;
+    transition: .25s ease-in;
     background-color: var(--secondary-color);
 }
 
@@ -165,7 +231,7 @@ main section {
     display: none;
     background-color: inherit;
     padding:0;
-    top:110px;
+    top:120px;
     color: inherit;
 }
 
@@ -181,7 +247,6 @@ main section {
 
 .button {
     display: inline-block;
-    width: 20%;
     text-decoration: none;
     color: white;
     text-align: center;
@@ -196,6 +261,7 @@ main section {
 }
 
 .button:hover {
+    color: white;
     background-color: var(--secondary-color);
 }
 
@@ -204,6 +270,7 @@ main section {
 }
 
 .button-highlighted:hover {
+    color: white;
     background-color: var(--dark-grey);
 }
 
@@ -216,16 +283,17 @@ main section {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
-    padding: 1em;
+    padding: 1.2em;
     background-color: var(--main-color);
     color: white;
-    -webkit-transition: .25s ease-out;
-    -o-transition: .25s ease-out;
-    -moz-transition: .25s ease-out;
-    transition: .25s ease-out;
+    -webkit-transition: .25s ease-in;
+    -o-transition: .25s ease-in;
+    -moz-transition: .25s ease-in;
+    transition: .25s ease-in;
 }
 
 .floating-button:hover {
+    color: white;
     background-color: var(--dark-grey);
 }
 
@@ -234,13 +302,13 @@ main section {
 .floating-button-top {
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
     z-index: 999;
-    -webkit-transition: .25s ease-out;
-    -o-transition: .25s ease-out;
-    -moz-transition: .25s ease-out;
-    transition: .25s ease-out;
+    -webkit-transition: .25s ease-in;
+    -o-transition: .25s ease-in;
+    -moz-transition: .25s ease-in;
+    transition: .25s ease-in;
 }
 
 /* toggle darkmode button */
@@ -376,10 +444,11 @@ main section {
             border-radius:100%;
     -o-object-fit: contain;
        object-fit: contain;
+    max-width: 200px;
 }
 
 .contact-card-description {
-    padding-left: 2em;
+    padding-left: 1em;
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
@@ -449,14 +518,9 @@ main section {
     font-size: 1.25em;
 }
 
-/* layout */
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: cover 99%
-*/
+
+/* layout */
 
 /* POSLEDNÍ ÚPRAVA 31.03.2021 */
 
@@ -473,7 +537,7 @@ header {
 footer {
     background-color: black;
     color: white;
-    padding: 1em;
+    padding: 2em 1em;
     position: relative;
 }
 
@@ -488,7 +552,6 @@ main {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    min-height: 50px;
     -webkit-box-align: center;
     -webkit-align-items: center;
        -moz-box-align: center;
@@ -544,10 +607,10 @@ main {
 }
 
 .admin-area a:hover {
-    -webkit-transition: .25s ease-out;
-    -o-transition: .25s ease-out;
-    -moz-transition: .25s ease-out;
-    transition: .25s ease-out;
+    -webkit-transition: .25s ease-in;
+    -o-transition: .25s ease-in;
+    -moz-transition: .25s ease-in;
+    transition: .25s ease-in;
     color: white;
     background-color: var(--secondary-color);
 }
@@ -558,11 +621,6 @@ main {
 }
 
 /* logo */
-.logo {
-    display: block;
-    width: 50%;
-}
-
 .logo a {
     width: 100%;
     height: 100%;
@@ -596,11 +654,12 @@ main {
 
 .title {
     color: white;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     text-align: center;
     width: 100%;
     margin: auto;
+
 }
 
 /* mobile topnav */
@@ -617,8 +676,8 @@ main {
     text-align: left;
 }
 
-.topnav.responsive .menu-item-icon {
-    float:left;
+.topnav.responsive .menu-item-icon a {
+    text-align: right;
 }
 
 .topnav.responsive .dropdown-menu{
@@ -658,8 +717,10 @@ main {
 .customers-container img {
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    max-height: 160px;
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+    
 }
 
 
@@ -691,10 +752,18 @@ main {
 
 .copyright {
     text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 12px;
 }
 
 .about-img img {
     width: 100%;
+}
+
+.link {
+    display: block;
+    text-align: left;
 }
 
 /* o nas sekce */
@@ -710,7 +779,6 @@ main {
 
 /* darkmode, darkmode override */
 
-/*
 @media (prefers-color-scheme: dark) {
     body {
         background-color: var(--darkmode-darker);
@@ -732,7 +800,6 @@ main {
         color: var(--dark-grey);
     }
 }
-*/
 
 /* tablet portrait, mobile landscape */
 
@@ -751,6 +818,10 @@ main {
         margin: auto;
     }
 
+    .topnav {
+        height: 60px;
+    }
+
     .hiding {
         display: inline;
     }
@@ -759,6 +830,16 @@ main {
         margin-top: 5em;
         margin-bottom: 3em;
     }
+
+    .menu {
+        flex-direction: row;
+        height: 60px;
+    }
+
+    .menu-item-icon {
+        align-self: flex-end;
+        margin-left: auto;
+    }    
 
 
     /* services */
@@ -1076,7 +1157,7 @@ main {
     }
 
     main, .topnav, .panel {
-        width: 70%;
+        width: 60%;
         margin: auto;
     }
 
