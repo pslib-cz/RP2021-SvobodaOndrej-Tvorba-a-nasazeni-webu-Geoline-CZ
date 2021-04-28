@@ -137,7 +137,7 @@ header {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 1.5rem;
     font-weight: 300;
-    margin: 0; 
+    margin: 1em 0; 
 }
 
 .heading {
@@ -152,6 +152,12 @@ header {
 .material-icons {
     vertical-align: middle;
 }
+
+.line {
+    border: 1px solid var(--main-color);
+    margin: 2em;
+}
+
 
 /* components */
 
@@ -484,6 +490,7 @@ header {
     -webkit-border-radius: 6px;
        -moz-border-radius: 6px;
             border-radius: 6px;
+    background-color: var(--silver);
 }
 
 .form-field input[type=tel] {
@@ -502,6 +509,7 @@ header {
     -webkit-border-radius: 6px;
        -moz-border-radius: 6px;
             border-radius: 6px;
+    background-color: var(--silver);
 }
 
 .form-submit button {
@@ -745,9 +753,24 @@ main {
     text-align: center;;
 }
 
+.footer-box-contacts {
+    display: none;
+}
+
+.footer-box-nav {
+    margin: 0 2em;
+    line-height: 1.5em;
+}
+
 .footer-box span {
     color:white;
     width: 100%;
+}
+
+.button-footer {
+    background-color: var(--main-color);
+    border-radius: 100%;
+    border: none;
 }
 
 .copyright {

@@ -1,3 +1,119 @@
+<?php
+
+//PHPMailer dependecies
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+require 'PHPMailer-master/src/Exception.php';
+
+try {
+    //create new phpmailer
+    $mail = new PHPMailer(true);
+
+    if(!empty($_POST["send"])) {
+        //post html form inputs
+        $userName = $_POST['name'];
+        $userEmail = $_POST['email'];
+        $userAddress = $_POST['address'];
+        $userTel = $_POST['tel'];
+        $userMessage = $_POST['message'];
+
+        //set correct encoding and language
+        $mail->CharSet = "UTF-8";
+        $mail->Encoding = 'base64';
+        $mail->setLanguage('cs', 'PHPMailer-master/language/');
+        
+        //smtp server settings
+        $mail->SMTPDebug = 0;
+        $mail->IsSMTP();
+        $mail->Host = 'smtp.forpsi.com';
+        $mail->Port = 465;
+        $mail->SMTPAuth = true;
+        $mail->Username = "xxxx";
+        $mail->Password = "xxxx";
+        $mail->SMTPSecure = 'ssl';
+        
+        //mail subject
+        $subject = 'Kontaktní formulář Geoline';
+    
+        //encode subject
+        $preferences = ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8'];
+        $encoded_subject = iconv_mime_encode('Subject', $subject, $preferences);
+        $encoded_subject = substr($encoded_subject, strlen('Subject: '));
+    
+        //mail html message
+        $message = '<html><body style="font-size: 16px;">';
+        $message .= '<img src="https://form.geoline.org/content/logo/geoline-A_new_male.png" alt="Geoline logo" />';
+        $message .= '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;">Kontaktní formulář Geoline CZ</h1>';
+        $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+        $message .= "<tr style='background: #f2f2f2;'><td><strong>Vaše jméno:</strong> </td><td>" . $userName . "</td></tr>";
+        $message .= "<tr><td><strong>Email:</strong> </td><td>" . $userEmail . "</td></tr>";
+        $message .= "<tr style='background: #f2f2f2;'><td><strong>Adresa:</strong> </td><td>" . $userAddress . "</td></tr>";
+        $message .= "<tr><td><strong>Telefon:</strong> </td><td>" . $userTel . "</td></tr>";
+        $message .= "<tr style='background: #f2f2f2;'><td><strong>Vaše zpráva:</strong> </td><td>" . $userMessage . "</td></tr>";
+        $message .= "</table>";
+        $message .= "</body></html>";
+    
+        //addresses
+        $mail->setFrom("form@geoline.org", "Kontaktní formulář Geoline");
+        $mail->addReplyTo($userEmail, $userName);
+        // $mail->addAddress("geoline@geoline.org");
+
+        //just for testing
+        $mail->addAddress("ondra2305@gmail.com");
+    
+        //mail content
+        $mail->isHTML(true);
+        $mail->Subject = $encoded_subject;
+        $mail->MsgHTML($message);
+        
+        //attachments
+        //taken from https://github.com/PHPMailer/PHPMailer/blob/master/examples/send_multiple_file_upload.phps
+
+        for ($ct = 0, $ctMax = count($_FILES['attachment']['tmp_name']); $ct < $ctMax; $ct++) {
+            //Extract an extension from the provided filename
+            $ext = PHPMailer::mb_pathinfo($_FILES['attachment']['name'], PATHINFO_EXTENSION);
+            //Define a safe location to move the uploaded file to, preserving the extension
+            $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['attachment']['name'][$ct])) . '.' . $ext;
+            $filename = $_FILES['attachment']['name'][$ct];
+            if (move_uploaded_file($_FILES['attachment']['tmp_name'][$ct], $uploadfile)) {
+                if (!$mail->addAttachment($uploadfile, $filename)) {
+                    $msg .= 'Nepovedlo se připojit soubor ' . $filename;
+                }
+            } else {
+                $msg .= 'Nepovedlo se přesunout soubor do: ' . $uploadfile;
+            }
+        }
+
+        //send mail
+        if (! $mail->Send()) {
+            //mailer error
+            $msg = "<div>Chyba Maileru: Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo nás kontaktujte na geoline@geoline.org. Error: " . $mail->ErrorInfo . "</div>";
+            header('Location: kontakt.php#contact-form');
+
+        } else {
+
+            $msg = "<div>Vaše zpráva byla úspěšně odeslána!</div>";
+            header('Location: kontakt.php#contact-form');
+        }
+    }
+
+//catch and output exceptions
+} catch (Exception $e) {
+    $e->errorMessage();
+    $msg = "<div> Error: Zprávu se nepodařilo odeslat. Kontaktujte nás prosím na geoline@geoline.org. Podrobnosti: " . $e . "</div>";
+    header('Location: kontakt.php#contact-form');
+
+} catch (\Exception $e) {
+    $e->getMessage();
+    $msg = "<div> Error: Zprávu se nepodařilo odeslat. Kontaktujte nás prosím na geoline@geoline.org. Podrobnosti: " . $e . "</div>";
+    header('Location: kontakt.php#contact-form');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
     <head>
@@ -39,9 +155,6 @@
         <header>
             <div class="panel">
                 <div class="logo"><a href="index.html"><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></a></div>
-                <div class="admin-area">
-                    <a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> <span class="hiding"> Zákaznický portál</span></a>
-                </div>
             </div>
             <div class="topnav-wrap">
                 <nav class="topnav" id="topnav">
@@ -129,34 +242,31 @@
                 </div>  
         </section>
         <section>
-            <!-- nedokončeno ,prozatím zakázáno odesílání -->
             <h2>Kontaktní formulář</h2>
             <div class="form">
-                <form name="contact-form" class="needs-validation" action="mailer.php" method="POST" enctype="multipart/form-data" novalidate>
+                <form id="contact-form" name="contact-form" method="POST" enctype="multipart/form-data">
+                    <?php if (!empty($msg)) {
+                        echo "<div>$msg</div>";
+                    } ?>
                     <div class="form-field">
                         <label for="name">Vaše jméno</label><br>
-                        <input class="form-control" type="text" id="name" name="name" value="Jan Novák" required>
-                        <div class="invalid-feedback">Povinné pole.</div>
+                        <input class="form-control" type="text" id="name" name="name" required>
                     </div>
                     <div class="form-field">
                         <label for="email">Email</label><br>
-                        <input class="form-control" type="email" id="email" name="email" value="jan.novak@seznam.cz" required>
-                        <div class="invalid-feedback">Povinné pole.</div>
+                        <input class="form-control" type="email" id="email" name="email" required>
                     </div>
                     <div class="form-field">
                         <label for="address">Adresa</label><br>
                         <input class="form-control" type="text" id="address" name="address" value="" required>
-                        <div class="invalid-feedback">Povinné pole.</div>
                     </div>
                     <div class="form-field">
                         <label for="tel">Telefon</label><br>
                         <input class="form-control" type="tel" id="tel" name="tel" value="" required>
-                        <div class="invalid-feedback">Povinné pole.</div>
                     </div>
                     <div class="form-field">
                         <label for="message">Vaše zpráva</label><br>
                         <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
-                        <div class="invalid-feedback">Povinné pole.</div>
                     </div>
                     <div class="form-submit">
                         <button id="submit-all" type="submit" class="button button-highlighted" form="contact-form" name="send" value="Odeslat">Odeslat</button>
