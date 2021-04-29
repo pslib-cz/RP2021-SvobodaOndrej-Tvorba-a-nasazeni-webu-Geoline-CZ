@@ -22,15 +22,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style-main.css">
 
-    <!-- testing
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
-    <!-- testing
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    -->
     <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,50 +38,49 @@
 </head>
 <body>
     <header>
-        <div class="panel">
-            <div class="logo"><a href="index.html"><h1><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></h1></a></div>
-            <div class="admin-area">
-                <a href="admin.php"><i class="fas fa-user"></i> <span class="hiding"> Administrace</span></a>
-                <a href="login.php"><i class="fas fa-sign-in-alt"></i> <span class="hiding"> Login</span></a>
-            </div>
-        </div>
         <div class="topnav-wrap">
             <nav class="topnav" id="topnav">
                 <ul class="menu" id="menu">
-                    <li class="menu-item menu-item-icon"><a href="javascript:void(0)" onclick="mobileMenuFunction()"><i id="menu-icon" class="fa fa-bars"></i></a></li>
+                    <li class="menu-item menu-item-icon">
+                        <a href="javascript:void(0)" onclick="mobileMenuFunction()">
+                            <div class="menu-icon" id="menu-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </div>
+                        </a>
+                    </li>
                     <li class="menu-item"><a class="active" href="index.html">Domů</a></li>
                     <li class="menu-item">
-                        <a href="index.html#nase-sluzby">Naše služby</a>
+                        <a href="nase-sluzby.html">Naše služby</a>
                         <ul class="dropdown-menu">
-                            <li class="menu-item menu-item-dropdown"><a href="katastr-nemovitosti.html">Katastr nemovitostí</a></li>
-                            <li class="menu-item menu-item-dropdown"><a href="inzenyrska-geodezie.html">Inženýrská geodézie</a></li>
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a></li>
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a></li>
                         </ul>
                     </li>
                     <li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
                     <li class="menu-item"><a href="reference.html">Reference</a></li>
                     <li class="menu-item"><a href="cenik.html">Ceník</a></li>
-                    <li class="menu-item">
-                        <a class="disabled">Zákaznický portál</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu-item menu-item-dropdown"><a href="https://form.geoline.org/index.php" target="_blank">Objednávkový formulář Progres</a></li>
-                            <li class="menu-item menu-item-dropdown"><a href="">Objednávkový formulář ČEZ</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                    <li class="menu-item"><a href="kontakt.php">Kontakt</a></li>
+                    <li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> Zákaznický portál</a></li>
                 </ul>
+                <div class="panel">
+                    <div class="logo"><a href="index.html"><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></a></div>
+                </div>
             </nav>
         </div>
     </header>
-    <section>
+    <section id="landing">
         <div class="bg">
             <div class="wrap">
                 <div class="title">
-                    <p class="heading">Geoline CZ</p>
+                    <h1 class="heading">Geoline CZ</h1>
                     <p>Rychle a spolehlivě.</p>
                     <p>Geodetické práce ve výstavbě a katastru nemovitostí v Libereckém kraji.</p>
                     <div class="buttons">
                         <a href="#o-nas" class="button">O nás</a>
-                        <a href="kontakt.html" class="button button-highlighted">Kontakt</a>
+                        <a href="kontakt.php" class="button button-highlighted">Kontakt</a>
                     </div>
                 </div>
             </div>
@@ -97,58 +89,66 @@
     <main class="main">
         <div class="wrapper">
             <h2>Naše služby</h2>
-            <section class="services" id="nase-sluzby">
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-pencil-ruler"></i></span>
-                    <h3>Geometrické plány</h3>
-                    <p>Stručný popis nabízené služby v několika 
-                        řádcích. Stručný popis nabízené služby v 
-                        několika řádcích. Stručný popis nabízené 
-                        služby v několika řádcích.Stručný popis 
-                        nabízené služby v několika řádcích.
-                    </p>
+            <section id="nase-sluzby">
+                <div class="services">
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-pencil-ruler"></i></span>
+                        <h3>Geometrické plány</h3>
+                        <p>Stručný popis nabízené služby v několika 
+                            řádcích. Stručný popis nabízené služby v 
+                            několika řádcích. Stručný popis nabízené 
+                            služby v několika řádcích.Stručný popis 
+                            nabízené služby v několika řádcích.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-home"></i></span>
+                        <h3>Vytyčení stavby</h3>
+                        <p>Stručný popis nabízené služby v několika 
+                            řádcích. Stručný popis nabízené služby v 
+                            několika řádcích. Stručný popis nabízené 
+                            služby v několika řádcích.Stručný popis 
+                            nabízené služby v několika řádcích.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-drafting-compass"></i></span>
+                        <h3>Geodetické práce</h3>
+                        <p>Stručný popis nabízené služby v několika 
+                            řádcích. Stručný popis nabízené služby v 
+                            několika řádcích. Stručný popis nabízené 
+                            služby v několika řádcích.Stručný popis 
+                            nabízené služby v několika řádcích.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-map"></i></span>
+                        <h3>Zápis do katastru nemovitostí</h3>
+                        <p>Stručný popis nabízené služby v několika 
+                            řádcích. Stručný popis nabízené služby v 
+                            několika řádcích. Stručný popis nabízené 
+                            služby v několika řádcích.Stručný popis 
+                            nabízené služby v několika řádcích.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-desktop"></i></span>
+                        <h3>Nejmodernější vybavení a přístoje</h3>
+                        <p>Naše firma je vybavena moderní a velmi přesnou měřící technikou, výpočetní počítačovou technikou a specializovaným softwarem. Používáme měřící přístoje Geomax a Leica.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon"><i class="fas fa-handshake"></i></span>
+                        <h3>Dlouholeté zkušenosti</h3>
+                        <p>Máme dlouholeté zkušenosti v tomto oboru. Spolupracujeme mimo jiné například s firmami Progres Liberec, ČEZ Distribuce nebo Innogy, které patří mezi naše největší zákazníky.
+                        </p>
+                    </div>
                 </div>
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-home"></i></span>
-                    <h3>Vytyčení stavby</h3>
-                    <p>Stručný popis nabízené služby v několika 
-                        řádcích. Stručný popis nabízené služby v 
-                        několika řádcích. Stručný popis nabízené 
-                        služby v několika řádcích.Stručný popis 
-                        nabízené služby v několika řádcích.
-                    </p>
-                </div>
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-drafting-compass"></i></span>
-                    <h3>Geodetické práce</h3>
-                    <p>Stručný popis nabízené služby v několika 
-                        řádcích. Stručný popis nabízené služby v 
-                        několika řádcích. Stručný popis nabízené 
-                        služby v několika řádcích.Stručný popis 
-                        nabízené služby v několika řádcích.
-                    </p>
-                </div>
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-map"></i></span>
-                    <h3>Zápis do katastru nemovitostí</h3>
-                    <p>Stručný popis nabízené služby v několika 
-                        řádcích. Stručný popis nabízené služby v 
-                        několika řádcích. Stručný popis nabízené 
-                        služby v několika řádcích.Stručný popis 
-                        nabízené služby v několika řádcích.
-                    </p>
-                </div>
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-desktop"></i></span>
-                    <h3>Nejmodernější vybavení a přístoje</h3>
-                    <p>Naše firma je vybavena moderní a velmi přesnou měřící technikou, výpočetní počítačovou technikou a specializovaným softwarem. Používáme měřící přístoje Geomax a Leica.
-                    </p>
-                </div>
-                <div class="service-box">
-                    <span class="service-icon"><i class="fas fa-handshake"></i></span>
-                    <h3>Dlouholeté zkušenosti</h3>
-                    <p>Máme dlouholeté zkušenosti v tomto oboru. Spolupracujeme mimo jiné například s firmami Progres Liberec, ČEZ Distribuce nebo Innogy, které patří mezi naše největší zákazníky.
-                    </p>
+                <div class="line"></div>
+                <div class="more">
+                    <p class="caption">Chcete zjistit více?</p>
+                    <a class="button button-highlighted-inv button-more" href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí <span class="icon-circle-right"></span></a>
+                    <a class="button button-highlighted-inv button-more" href="mase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie <span class="icon-circle-right"></span></a>
                 </div>
             </section>
             <section id="o-nas">
@@ -175,57 +175,42 @@
                                 <div class="contact-card-description">
                                     <p class="caption">Ing. Petr Svoboda</p>
                                     <p>Společník</p>
-                                    <p>
-                                        <span><span class="material-icons">mail</span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></span>
-                                    </p>
-                                    <p>
-                                        <span><span class="material-icons">call</span><a href="tel:+420608020215"> 608 020 215</a></span>
-                                    </p>
+                                    <p><span class="icon-envelop"></span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></p>
+                                    <p><span class="icon-mobile"></span><a href="tel:+420608020215"> 608 02 02 15</a></p>
                                 </div>
                             </div>
                             <div class="contact-card" id="vl">
                                 <div class="contact-img">
-                                    <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                                    <img src="img/other/person.png" alt="Vlastimil Coufal">
                                 </div>
                                 <div class="contact-card-description">
                                     <p class="caption">Vlastimil Coufal</p>
                                     <p>Společník</p>
-                                    <p>
-                                        <span><span class="material-icons">mail</span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></span>
-                                    </p>
-                                    <p>
-                                        <span><span class="material-icons">call</span><a href="tel:+420608987874"> 608978874</a></span>
-                                    </p>
+                                    <p><span class="icon-envelop"></span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></p>
+                                    <p><span class="icon-mobile"></span><a href="tel:+420608987874"> 608 978 874</a></p>
                                 </div>
                             </div>
                             <div class="contact-card" id="placeholder">
                                 <div class="contact-img">
-                                    <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                                    <img src="img/other/person.png" alt="placeholder1">
                                 </div>
                                 <div class="contact-card-description">
                                     <p class="caption">Ondřej</p>
                                     <p>Webdesigner</p>
-                                    <p>
-                                        <span><span class="material-icons">mail</span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></span>
-                                    </p>
-                                    <p>
-                                        <span><span class="material-icons">call</span><a href="tel:+420777888999"> 775 510 215</a></span>
-                                    </p>
+                                    <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
+                                    <p><span class="icon-mobile"></span><a href="tel:+420777888999"> 775 510 215</a></p>
                                 </div>
                             </div>
                             <div class="contact-card" id="placeholder2">
                                 <div class="contact-img">
-                                    <img src="img/other/person.png" alt="Ing. Petr Svoboda">
+                                    <img src="img/other/person.png" alt="placeholder2">
                                 </div>
                                 <div class="contact-card-description">
                                     <p class="caption">Ondřej</p>
                                     <p>Webdesigner</p>
-                                    <p>
-                                        <span><span class="material-icons">mail</span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></span>
+                                    <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a>
                                     </p>
-                                    <p>
-                                        <span><span class="material-icons">call</span><a href="tel:+420777777777"> 775 510 215</a></span>
-                                    </p>
+                                    <p><span class="icon-mobile"></span><a href="tel:+420777777777"> 775 510 215</a></p>
                                 </div>
                             </div>     
                     </div>
@@ -233,38 +218,64 @@
             <section id="zakaznici">
                 <h2>Naši zákazníci</h2>
                 <div class="customers">
-                    <figure class="customers-container" id="progres">
-                        <img src="img/customers/progres/progres-logo.svg" alt="Progres Liberec">
-                    </figure>
-                    <figure class="customers-container" id="cez">
-                        <img src="img/customers/cez/cez_transp_227px.png" alt="ČEZ Distribuce">
-                    </figure>
-                    <figure class="customers-container" id="innogy">
-                        <img src="img/customers/innogy/innogy_logo_vertical.svg" alt="Innogy">
-                    </figure>
+                    <div class="customers-container" id="progres">
+                        <a href="http://www.progres-lbc.cz">
+                            <img src="img/customers/progres/progres-logo.svg" alt="Progres Liberec">
+                        </a>
+                    </div>
+                    <div class="customers-container" id="cez">
+                        <a href="https://www.cezdistribuce.cz">
+                            <img src="img/customers/cez/cez_transp_227px.png" alt="ČEZ Distribuce">
+                        </a>
+                    </div>
+                    <div class="customers-container" id="innogy">
+                        <a href="https://www.innogy.cz">
+                            <img src="img/customers/innogy/innogy_logo_vertical.svg" alt="Innogy">
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
     <footer>
         <div class="contacts">
-            <div class="footer-box">
-                <span class="material-icons">place</span>
-                <p>Kašparova 186/23,</p>
-                <p>Rochlice, 460 06 Liberec</p>
+            <div class="footer-box footer-box-contacts">
+                <div class="footer-box">
+                    <span class="icon-location"></span>
+                    <p>Kašparova 186/23,</p>
+                    <p>Rochlice, 460 06 Liberec</p>
+                </div>
+                <div class="footer-box">
+                    <span class="icon-envelop"></span>
+                    <p><a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
+                </div>
+                <div class="footer-box">
+                    <span class="icon-phone"></span>
+                    <p><a href="tel:+420485104234">+420 485 104 234</a></p>
+                    <p>Po-Pá 8 - 17</p>
+                </div>
             </div>
-            <div class="footer-box">
-                <span class="material-icons">mail</span>
-                <p><a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
+            <div class="footer-box footer-box-nav">
+                <a class="link" href="index.html#nase-sluzby">Naše služby</a>
+                <a class="link" href="">Katastr nemovitostí</a>
+                <a class="link" href="">Inženýrská geodézie</a>
+                <a class="link" href="">O nás</a>
+                <a class="link" href="">Reference</a>
+                <a class="link" href="">Ceník</a>
+                <a class="link" href="">Kontakt</a>
             </div>
-            <div class="footer-box">
-                <span class="material-icons">call</span>
-                <p><a href="tel:+420485104234">+420 485 104 234</a></p>
-                <p>Po-Pá 8 - 17</p>
+            <div class="footer-box footer-box-icons">
+                <a class="button button-footer" href="https://goo.gl/maps/tL4XGtbSeiwCiP3p9"><span class="icon-location"></span></a>
+                <a class="button button-footer" href="mailto:geoline@geoline.org"><span class="icon-envelop"></span></a>
+                <a class="button button-footer" href="tel:+420485104234"><span class="icon-phone"></span></a>
             </div>
         </div>
-        <p class="copyright"> v0.5 © 2021 GEOLINE CZ v.o.s., Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
-        <button onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+        <div class="copyright">
+            <p>v0.6 © 2021 GEOLINE CZ v.o.s.</p>
+            <p>Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
+
+        </div>
+        <a onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></a>
     </footer>
     <!-- scroll to top button -->
     <script>
@@ -293,11 +304,11 @@
 
           if (menu.className === "topnav") {
             menu.className += " responsive";
-            menuicon.className += "fas fa-times";
+            menuicon.classList.toggle("open");
 
           } else {
             menu.className = "topnav";
-            menuicon.className += "fas fa-bars";
+            menuicon.classList.toggle("open");
           }
         }
     </script>
