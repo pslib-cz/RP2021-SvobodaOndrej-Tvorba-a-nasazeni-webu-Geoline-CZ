@@ -65,12 +65,24 @@
   }
   
   /* company info */
-  
+
   .company-info h3 {
     font-size: 2em;
   }
   
   .company-info p {
     font-size: 1.25em;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .company-container {
+        display: flex;
+        gap: 10px
+    }
+  
+    .company-info, .company-map {
+        flex-basis: 50%;
+    }
+  
   }
   

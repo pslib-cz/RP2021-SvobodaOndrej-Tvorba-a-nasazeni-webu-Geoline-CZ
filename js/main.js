@@ -16,16 +16,11 @@
       document.documentElement.scrollTop = 0;
     }
 
-    function mobileMenuFunction() {
-      var menu = document.getElementById("topnav");
-      var menuicon = document.getElementById("menu-icon");
-
-      if (menu.className === "topnav") {
-        menu.className += " responsive";
-        menuicon.classList.toggle("open");
-
-      } else {
-        menu.className = "topnav";
-        menuicon.classList.toggle("open");
-      }
+    function toggleMenu() {
+    var menu = document.getElementById("topnav");
+    if (menu.className === "topnav") {
+       menu.classList.toggle("responsive");
+    } else {
+       menu.className = "topnav";
+    }
     }

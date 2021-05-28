@@ -170,6 +170,7 @@ html {
     color: white;
     height: 100%;
     box-sizing: border-box;
+    line-height: 1;
   }
   
   .menu-item a {
@@ -238,6 +239,7 @@ html {
     font-size: 1.5em;
     margin: 1em;
     transition: 0.25s ease-in;
+    border-radius: 8px;
   }
   
   .button:hover {
@@ -311,10 +313,10 @@ html {
   .contact-img {
     flex-basis: 50%;
     /*
-        background-image: url(../img/other/person.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        */
+          background-image: url(../img/other/person.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          */
   }
   
   .contact-img img {
@@ -378,10 +380,12 @@ html {
   /* mobile portrait */
   
   header {
-    position: -webkit-sticky;
-    position: sticky;
+    position: relative;
     top: 0;
+    right: 0;
+    left: 0;
     background-color: #f2f2f2;
+    min-height: 60px;
   }
   
   footer {
@@ -399,13 +403,17 @@ html {
   .topnav {
     display: flex;
     align-items: center;
-    position: relative;
+    position: absolute;
     left: 0;
     right: 0;
     background-color: #30323d;
     min-height: 60px;
-    z-index: 999;
-    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  
+  .topnav-wrap {
+    background-color: #30323d;
+    min-height: 60px;
   }
   
   /* mobile topnav */
@@ -447,91 +455,97 @@ html {
     z-index: 2;
   }
   
-  /* menu icon */
+  /* mobile menu-icon menu */
+  .menu-icon-nav ul {
+    margin: 0;
+    padding: 0;
+  }
   
   .menu-icon {
     width: 45px;
-    height: 40px;
+    height: 35px;
     position: relative;
-    margin: 0;
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
     cursor: pointer;
   }
   
   .menu-icon span {
-    display: block;
     position: absolute;
-    height: 5px;
-    width: 100%;
+    height: 6px;
     background: white;
-    border-radius: 9px;
-    opacity: 1;
+    border-radius: 4.5px;
     left: 0;
+    width: 100%;
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
   }
   
-  .menu-icon {
-    color: white;
-  }
   
   .menu-icon span:nth-child(1) {
     top: 0px;
+    transition: top ease-in-out 0.1s 0.15s, -webkit-transform 0.15s;
+    transition: top ease-in-out 0.1s 0.15s, transform 0.15s;
+    transition: top ease-in-out 0.1s 0.15s, transform 0.15s,
+      -webkit-transform 0.15s;
   }
   
-  .menu-icon span:nth-child(2),
-  #menu-icon span:nth-child(3) {
+  .menu-icon span:nth-child(2) {
     top: 15px;
+    transition: visibility 0s 0.15s;
   }
   
-  .menu-icon span:nth-child(4) {
-    top: 30px;
+  .menu-icon span:nth-child(3) {
+    bottom: 0px;
+    transition: bottom ease-in-out 0.1s 0.15s, -webkit-transform 0.15s;
+    transition: bottom ease-in-out 0.1s 0.15s, transform 0.15s;
+    transition: bottom ease-in-out 0.1s 0.15s, transform 0.15s,
+      -webkit-transform 0.15s;
   }
   
-  .menu-icon.open span:nth-child(1) {
-    top: 15px;
-    width: 0%;
-    left: 50%;
-  }
-  
-  .menu-icon.open span:nth-child(2) {
+  .topnav.responsive .menu-icon-row .menu-icon span:nth-child(1) {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    top: 15px;
+    transition: top ease-in-out 0.1s, -webkit-transform 0.15s 0.1s;
+    transition: top ease-in-out 0.1s, transform 0.15s 0.1s;
+    transition: top ease-in-out 0.1s, transform 0.15s 0.1s,
+      -webkit-transform 0.15s 0.1s;
   }
   
-  .menu-icon.open span:nth-child(3) {
+  .topnav.responsive .menu-icon-row .menu-icon span:nth-child(2) {
+    visibility: hidden;
+    transition: visibility 0s 0.1s;
+  }
+  
+  .topnav.responsive .menu-icon-row .menu-icon span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    bottom: 15px;
+    transition: bottom ease-in-out 0.1s, -webkit-transform 0.15s 0.1s;
+    transition: bottom ease-in-out 0.1s, transform 0.15s 0.1s;
+    transition: bottom ease-in-out 0.1s, transform 0.15s 0.1s,
+      -webkit-transform 0.15s 0.1s;
   }
   
-  .menu-icon.open span:nth-child(4) {
-    top: 30px;
-    width: 0%;
-    left: 50%;
+  .topnav.responsive .menu-icon-nav .menu {
+    visibility: hidden;
   }
   
-  .topnav-wrap {
-    background-color: #30323d;
-    min-height: 60px;
-    z-index: 1000;
+  .menu-icon-nav .menu {
+    visibility: initial;
+    overflow: hidden;
+    transition: 0.25s ease-in-out;
   }
   
   .panel {
     display: inline-block;
     height: 60px;
-  }
-  
-  .admin-area a {
-    display: block;
-    text-align: center;
-    padding: 1em;
+    margin-right: auto;
   }
   
   .hiding {
@@ -563,7 +577,7 @@ html {
     content: "";
     left: 0;
     right: 0;
-    z-index: -1000;
+    z-index: -1;
     display: block;
     -webkit-filter: blur(6px);
     -moz-filter: blur(6px);
@@ -588,7 +602,7 @@ html {
     object-fit: contain;
     border: none;
     width: 100%;
-    min-height: 40vh;
+    height: 100%;
     position: absolute;
     overflow: auto;
   }
@@ -596,34 +610,34 @@ html {
   .bg {
     left: 0;
     right: 0;
-    min-height: 40vh;
+    height: 60vh;
     overflow: hidden;
     position: relative;
   }
   
   .wrap {
-    min-height: 40vh;
+    height: 60vh;
     background-color: rgba(184, 142, 74, 0.6);
     position: absolute;
     left: 0;
     right: 0;
-    z-index: -1;
+    z-index: 1;
   }
   
   .landing {
     position: relative;
-    height: 40vh;
+    z-index: 0;
   }
   
   .title {
     color: white;
-    padding-top: 4em;
+    padding-top: 3em;
     padding-bottom: 2em;
     text-align: center;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    z-index: 1000;
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
@@ -646,7 +660,8 @@ html {
   }
   
   .more {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
   
   .button-more {
@@ -719,6 +734,10 @@ html {
     border: none;
   }
   
+  .button-footer:hover {
+    background-color: #30323d;
+  }
+  
   .copyright {
     text-align: center;
     margin-top: 2em;
@@ -727,7 +746,7 @@ html {
   
   /* darkmode, darkmode override */
   
-  @media (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark) {
     body {
       background-color: #0f1112;
       color: white;
@@ -749,7 +768,12 @@ html {
     }
   }
   
-  @media screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
+    .bg,
+    .wrap {
+      height: 40vh;
+    }
+
     .topnav.responsive {
       width: 90%;
     }
@@ -800,10 +824,24 @@ html {
       gap: 10px;
     }
   }
+
+  /* landscape */
+
+  @media only screen and (orientation: landscape) {
+    .bg,
+    .wrap {
+      height: 100vh;
+    }
+  }
   
-  /* tablet portrait, mobile landscape */
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    .bg,
+    .wrap {
+      height: 50vh;
+    }
+  }
   
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .bg::before {
       background-image: url(../img/stock/surveyor_working_2.jpg);
     }
@@ -903,7 +941,7 @@ html {
     }
   }
   
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .contact-card#svobope {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
@@ -925,7 +963,7 @@ html {
     }
   }
   
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .customers-container#progres {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
@@ -942,17 +980,17 @@ html {
     }
   }
   
-  @media screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
     main {
       width: 60%;
     }
-  
+
     /* menu */
     .topnav {
       min-height: 60px;
       flex-direction: row;
       height: 100%;
-      width: 90%;
+      width: 100%;
     }
   
     .topnav-wrap {
@@ -960,7 +998,12 @@ html {
     }
   
     .menu {
+      height: 100%;
       flex-direction: row;
+    }
+
+    .panel {
+        order: 2;
     }
   
     .menu {
@@ -972,8 +1015,12 @@ html {
       display: flex;
     }
   
-    .menu-item-icon {
-      display: none;
+    .menu-icon-row {
+      visibility: hidden;
+    }
+  
+    .menu-icon-nav ul {
+      visibility: initial;
     }
   
     .logo {
@@ -1060,8 +1107,15 @@ html {
       margin-bottom: 1em;
     }
   }
+
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    .bg,
+    .wrap {
+      height: 40vh;
+    }
+  }
   
-  @media screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
     .service-box#s1 {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
@@ -1117,22 +1171,29 @@ html {
   
   /* tablet landscape + desktop */
   
-  @media screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1280px) {
     .bg::before {
       background-image: url(../img/stock/surveyor_working_1.jpg);
-    }
-  
-    .title {
-      width: 40%;
     }
   
     main {
       width: 70%;
       margin: auto;
     }
+
+    .title {
+        width: 40%;
+        padding-top: 4em;
+      }
   
-    .topnav {
-      width: 80%;
+      .bg,
+      .wrap {
+        height: 40vh;
+      }
+  
+    .topnav,
+    .contacts {
+      width: 90%;
     }
   
     .services {
@@ -1160,7 +1221,7 @@ html {
     }
   }
   
-  @media screen and (min-width: 1600px) {
+  @media only screen and (min-width: 1600px) {
     .about-container {
       -ms-grid-columns: 1fr 10px 1fr;
       grid-template-columns: 1fr 1fr;
@@ -1168,10 +1229,13 @@ html {
       grid-template-rows: 2fr 1fr;
     }
   
-    main,
-    .topnav {
+    main {
       width: 60%;
-      margin: auto;
+    }
+  
+    .topnav,
+    .contacts {
+      width: 70%;
     }
   
     .contact-container {
@@ -1230,7 +1294,7 @@ html {
   
   /* very big screens */
   
-  @media screen and (min-width: 2000px) {
+  @media only screen and (min-width: 2000px) {
     .services {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
@@ -1242,13 +1306,6 @@ html {
     .about-container {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 2fr 1fr;
-    }
-  
-    .contact-container {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "svobope vl placeholder placeholder2";
-      gap: 20px;
     }
   }
   

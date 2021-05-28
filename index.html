@@ -9,25 +9,31 @@
 	<title>Geoline CZ v.o.s.</title>
 	<meta name="description" content="Geodetické práce v katastru nemovitostí.">
 	<meta name="robots" content="index, follow">
+
 	<!-- favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+
 	<!-- fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style-main.css">
+
+    <!-- js -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css">
+
 	<!-- disabled js version
     <noscript>
          <link rel="stylesheet" href="css/noscript.css">
     </noscript>
     -->
+
 	<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGQWK87L6E"></script>
@@ -46,44 +52,48 @@
 	<header>
 		<div class="topnav-wrap">
 			<nav class="topnav" id="topnav">
-				<div class="menu-item menu-item-icon">
-					<a href="javascript:void(0)" onclick="mobileMenuFunction()">
-						<div class="menu-icon" id="menu-icon"> <span></span> <span></span> <span></span> <span></span> </div>
-					</a>
-				</div>
-				<ul class="menu" id="menu">
-					<li class="menu-item"><a class="active" href="index.html">Domů</a></li>
-					<li class="menu-item"> <a href="nase-sluzby.html">Naše služby</a>
-						<ul class="dropdown-menu">
-							<li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a></li>
-							<li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a></li>
-						</ul>
-					</li>
-					<li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
-					<li class="menu-item"><a href="reference.html">Reference</a></li>
-					<li class="menu-item"><a href="cenik.html">Ceník</a></li>
-					<li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
-					<li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> Zákaznický portál</a></li>
-				</ul>
-				<div class="panel">
+                <div class="panel">
 					<div class="logo">
 						<a href="index.html"><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></a>
 					</div>
 				</div>
+                <ul class="menu menu-icon-nav" id="menu">
+                    <li class="menu-item"><a class="active" href="index.html">Domů</a></li>
+                    <li class="menu-item"> <a href="nase-sluzby.html">Naše služby</a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a></li>
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
+                    <li class="menu-item"><a href="reference.html">Reference</a></li>
+                    <li class="menu-item"><a href="cenik.html">Ceník</a></li>
+                    <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                    <li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> Zákaznický portál</a></li>
+                </ul>
+                <div class="menu-icon-row">
+                    <div class="menu-icon">
+                       <a href="javascript:void(0)" onclick="toggleMenu()">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       </a>
+                    </div>
+                 </div>
 			</nav>
 		</div>
 	</header>
-	<section id="landing">
-		<div class="bg">
-			<div class="wrap">
-				<div class="title">
-					<h1 class="heading">Geoline CZ</h1>
-					<p>Rychle a spolehlivě.</p>
-					<p>Geodetické práce ve výstavbě a katastru nemovitostí v Libereckém kraji.</p>
-					<div class="buttons"> <a href="#o-nas" class="button">O nás</a> <a href="kontakt.html" class="button button-highlighted">Kontakt</a> </div>
-				</div>
-			</div>
-		</div>
+	<section class="landing" id="landing">
+            <div class="bg">
+                <div class="wrap">
+                </div>
+            </div>
+            <div class="title">
+                <h1 class="heading">Geoline CZ</h1>
+                <p>Rychle a spolehlivě.</p>
+                <p>Geodetické práce ve výstavbě a katastru nemovitostí v Libereckém kraji.</p>
+                <div class="buttons"> <a href="#o-nas" class="button">O nás</a> <a href="kontakt.html" class="button button-highlighted">Kontakt</a> </div>
+            </div>
 	</section>
 	<main class="main">
 		<div class="wrapper">
@@ -244,8 +254,12 @@
 	<script src="js/main.js" defer></script>
 	<script>
 	var glide = new Glide('.glide', {
+        type: 'slider',
 		focusAt: 'center',
+        startAt: 2,
 		perView: 3,
+        autoplay: 4000,
+        hoverpause: false,
 		breakpoints: {
 			800: {
 				perView: 2

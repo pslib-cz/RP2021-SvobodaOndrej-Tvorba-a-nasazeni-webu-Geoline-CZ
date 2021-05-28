@@ -37,30 +37,34 @@
 	<header>
 		<div class="topnav-wrap">
 			<nav class="topnav" id="topnav">
-				<div class="menu-item menu-item-icon">
-					<a href="javascript:void(0)" onclick="mobileMenuFunction()">
-						<div class="menu-icon" id="menu-icon"> <span></span> <span></span> <span></span> <span></span> </div>
-					</a>
-				</div>
-				<ul class="menu" id="menu">
-					<li class="menu-item"><a class="active" href="index.html">Domů</a></li>
-					<li class="menu-item"> <a href="nase-sluzby.html">Naše služby</a>
-						<ul class="dropdown-menu">
-							<li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a></li>
-							<li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a></li>
-						</ul>
-					</li>
-					<li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
-					<li class="menu-item"><a href="reference.html">Reference</a></li>
-					<li class="menu-item"><a href="cenik.html">Ceník</a></li>
-					<li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
-					<li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> Zákaznický portál</a></li>
-				</ul>
-				<div class="panel">
+                <div class="panel">
 					<div class="logo">
 						<a href="index.html"><img src="img/logo/geoline-A_new_nobg.png" alt="Geoline CZ v.o.s."></a>
 					</div>
 				</div>
+                <ul class="menu menu-icon-nav" id="menu">
+                    <li class="menu-item"><a class="active" href="index.html">Domů</a></li>
+                    <li class="menu-item"> <a href="nase-sluzby.html">Naše služby</a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a></li>
+                            <li class="menu-item menu-item-dropdown"><a href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="index.html#o-nas">O nás</a></li>
+                    <li class="menu-item"><a href="reference.html">Reference</a></li>
+                    <li class="menu-item"><a href="cenik.html">Ceník</a></li>
+                    <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                    <li class="menu-item"><a href="https://form.geoline.org/index.php"><i class="fas fa-user"></i> Zákaznický portál</a></li>
+                </ul>
+                <div class="menu-icon-row">
+                    <div class="menu-icon">
+                       <a href="javascript:void(0)" onclick="toggleMenu()">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       </a>
+                    </div>
+                 </div>
 			</nav>
 		</div>
 	</header>
@@ -124,12 +128,25 @@
 					<p>Po-Pá 8 - 17</p>
 				</div>
 			</div>
-			<div class="footer-box footer-box-nav"> <a class="link" href="index.html#nase-sluzby">Naše služby</a> <a class="link" href="">Katastr nemovitostí</a> <a class="link" href="">Inženýrská geodézie</a> <a class="link" href="">O nás</a> <a class="link" href="">Reference</a> <a class="link" href="">Ceník</a> <a class="link" href="">Kontakt</a> </div>
+			<div class="footer-box-nav">
+				<ul class="footer-box">
+					<li> <a class="link" href="index.html#nase-sluzby">Naše služby</a> </li>
+					<li> <a class="link" href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a> </li>
+					<li> <a class="link" href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a> </li>
+					<li> <a class="link" href="#o-nas">O nás</a> </li>
+					<li> <a class="link" href="reference.html">Reference</a> </li>
+					<li> <a class="link" href="cenik.html">Ceník</a> </li>
+					<li> <a class="link" href="kontakt.html">Kontakt</a> </li>
+				</ul>
+				<ul class="footer-box">
+					<li> <a class="link" href="https://form.geoline.org/index.php">Zákaznická administrace Progres</a> </li>
+					<li> <a class="link" href="https://form.geoline.org/cez.php">Zákaznická administrace ČEZ</a> </li>
+				</ul>
+			</div>
 			<div class="footer-box footer-box-icons"> <a class="button button-footer" href="https://goo.gl/maps/tL4XGtbSeiwCiP3p9"><span class="icon-location"></span></a> <a class="button button-footer" href="mailto:geoline@geoline.org"><span class="icon-envelop"></span></a> <a class="button button-footer" href="tel:+420485104234"><span class="icon-phone"></span></a> </div>
 		</div>
 		<div class="copyright">
-			<p>v0.8 © 2021 GEOLINE CZ v.o.s.</p>
-			<p>Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
+			<p>v0.8 © 2021 GEOLINE CZ v.o.s., Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
 		</div> <a onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></a> </footer>
 	<script src="js/main.js" defer></script>
 </body>
