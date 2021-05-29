@@ -17,10 +17,10 @@
     }
 
     function toggleMenu() {
-    var menu = document.getElementById("topnav");
-    if (menu.className === "topnav") {
-       menu.classList.toggle("responsive");
+    var menu = document.getElementById("page-nav");
+    if (menu.className === "page-nav") {
+       menu.classList.toggle("page-nav--responsive");
     } else {
-       menu.className = "topnav";
+       menu.className = "page-nav";
     }
     }

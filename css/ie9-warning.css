@@ -1,0 +1,43 @@
+
+            body {
+                position: relative;
+                background-color: lightgrey;
+
+            }
+
+            body > * {
+                display: none;
+            }
+
+            html, body, body:before {
+                height: 100%;
+                text-align: center;
+            }
+
+            body:before {
+                content: '';
+                display: inline-block;
+                margin-left: -0.25em;
+                width: 0;
+                vertical-align: middle;
+            }
+
+            #ie-warning {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                vertical-align: middle;
+                padding: 10px;
+                border: 2px solid #a27035;
+                background-color: #fff;
+            }
+
+            #ie-warning p {
+                font-size: 24px;
+            }
+
+            #user-agent {
+                width: 100%
+            }
