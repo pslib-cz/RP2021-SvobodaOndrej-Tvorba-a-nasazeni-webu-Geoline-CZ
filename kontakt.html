@@ -70,92 +70,94 @@
 		</div>
 	</header>
 	<main class="main">
-		<section>
-			<h2>Kontakt</h2>
-			<div class="company-container">
-				<div class="company-info">
-					<h3>Geoline CZ v.o.s.</h3>
-					<p>IČO: 25034316, DIČ: CZ25034316</p>
-					<p><span class="material-icons">place</span> Kašparova 186/23</p>
-					<p><span class="material-icons">place</span> Liberec VI-Rochlice, 46006 Liberec</p>
-					<p><span class="material-icons">mail</span> <a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
-					<p><span class="material-icons">call</span> <a href="tel:+420485104234">+420 485 104 234</a></p>
-				</div>
-				<div class="company-map">
-					<iframe class="iframe" frameborder="0" style="border:0; height: 400px;" src="https://www.google.com/maps/embed/v1/streetview?location=50.7329%2C15.0713&pano=Lt7zvpRaQKCvAvUg0qIf9g&key=AIzaSyC5Wpi96VSzFnSkPEealHiw0BbiSdVELEc&heading=102&pitch=1" allowfullscreen></iframe>
-				</div>
-			</div>
-			<h2>Náš tým</h2>
-			<div class="contact-container">
-				<div class="contact-card" id="svobope">
-					<div class="contact-img"> <img src="img/other/person.png" alt="Ing. Petr Svoboda"> </div>
-					<div class="contact-card-description">
-						<p class="caption">Ing. Petr Svoboda</p>
-						<p>Společník</p>
-						<p><span class="icon-envelop"></span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></p>
-						<p><span class="icon-mobile"></span><a href="tel:+420608020215"> 608 02 02 15</a></p>
-					</div>
-				</div>
-				<div class="contact-card" id="vl">
-					<div class="contact-img"> <img src="img/other/person.png" alt="Vlastimil Coufal"> </div>
-					<div class="contact-card-description">
-						<p class="caption">Vlastimil Coufal</p>
-						<p>Společník</p>
-						<p><span class="icon-envelop"></span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></p>
-						<p><span class="icon-mobile"></span><a href="tel:+420608987874"> 608 978 874</a></p>
-					</div>
-				</div>
-				<div class="contact-card" id="placeholder">
-					<div class="contact-img"> <img src="img/other/person.png" alt="placeholder1"> </div>
-					<div class="contact-card-description">
-						<p class="caption">Ondřej</p>
-						<p>Webdesigner</p>
-						<p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
-						<p><span class="icon-mobile"></span><a href="tel:+420777888999"> 775 510 215</a></p>
-					</div>
-				</div>
-				<div class="contact-card" id="placeholder2">
-					<div class="contact-img"> <img src="img/other/person.png" alt="placeholder2"> </div>
-					<div class="contact-card-description">
-						<p class="caption">Ondřej</p>
-						<p>Webdesigner</p>
-						<p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a> </p>
-						<p><span class="icon-mobile"></span><a href="tel:+420777777777"> 775 510 215</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section>
-			<h2>Kontaktní formulář</h2>
-			<div class="form">
-				<form action="mailer.php" id="contact-form" name="contact-form" method="POST" enctype="multipart/form-data">
-					<div class="form-field">
-						<label for="name">Vaše jméno</label>
-						<br>
-						<input class="form-control" type="text" id="name" name="name" required> </div>
-					<div class="form-field">
-						<label for="email">Email</label>
-						<br>
-						<input class="form-control" type="email" id="email" name="email" required> </div>
-					<div class="form-field">
-						<label for="address">Adresa</label>
-						<br>
-						<input class="form-control" type="text" id="address" name="address" value="" required> </div>
-					<div class="form-field">
-						<label for="tel">Telefon</label>
-						<br>
-						<input class="form-control" type="tel" id="tel" name="tel" value="" required> </div>
-					<div class="form-field">
-						<label for="message">Vaše zpráva</label>
-						<br>
-						<textarea class="form-control" name="message" id="message" rows="4" required></textarea>
-					</div>
-					<div class="form-submit">
-						<button id="submit-all" type="submit" class="button button-highlighted" form="contact-form" name="send" value="Odeslat">Odeslat</button>
-					</div>
-				</form>
-			</div>
-		</section>
+		<div class="section-wrapper">
+            <section>
+                <h2>Kontakt</h2>
+                <div class="company-container">
+                    <div class="company-info">
+                        <h3>Geoline CZ v.o.s.</h3>
+                        <p>IČO: 25034316, DIČ: CZ25034316</p>
+                        <p><span class="material-icons">place</span> Kašparova 186/23</p>
+                        <p><span class="material-icons">place</span> Liberec VI-Rochlice, 46006 Liberec</p>
+                        <p><span class="material-icons">mail</span> <a href="mailto:geoline@geoline.org">geoline@geoline.org</a></p>
+                        <p><span class="material-icons">call</span> <a href="tel:+420485104234">+420 485 104 234</a></p>
+                    </div>
+                    <div class="company-map">
+                        <iframe class="iframe" frameborder="0" style="border:0; height: 400px;" src="https://www.google.com/maps/embed/v1/streetview?location=50.7329%2C15.0713&pano=Lt7zvpRaQKCvAvUg0qIf9g&key=AIzaSyC5Wpi96VSzFnSkPEealHiw0BbiSdVELEc&heading=102&pitch=1" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <h2>Náš tým</h2>
+                <div class="contact-container">
+                    <div class="contact-card" id="svobope">
+                        <div class="contact-img"> <img src="img/other/person.png" alt="Ing. Petr Svoboda"> </div>
+                        <div class="contact-card-description">
+                            <p class="caption">Ing. Petr Svoboda</p>
+                            <p>Společník</p>
+                            <p><span class="icon-envelop"></span><a href="mailto:petr@geoline.org"> petr@geoline.org</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420608020215"> 608 02 02 15</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card" id="vl">
+                        <div class="contact-img"> <img src="img/other/person.png" alt="Vlastimil Coufal"> </div>
+                        <div class="contact-card-description">
+                            <p class="caption">Vlastimil Coufal</p>
+                            <p>Společník</p>
+                            <p><span class="icon-envelop"></span><a href="mailto:vlasta@geoline.org"> vlasta@geoline.org</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420608987874"> 608 978 874</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card" id="placeholder">
+                        <div class="contact-img"> <img src="img/other/person.png" alt="placeholder1"> </div>
+                        <div class="contact-card-description">
+                            <p class="caption">Ondřej</p>
+                            <p>Webdesigner</p>
+                            <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a></p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420777888999"> 775 510 215</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card" id="placeholder2">
+                        <div class="contact-img"> <img src="img/other/person.png" alt="placeholder2"> </div>
+                        <div class="contact-card-description">
+                            <p class="caption">Ondřej</p>
+                            <p>Webdesigner</p>
+                            <p><span class="icon-envelop"></span><a href="mailto:ondra@svobodao.cz"> ondra@svobodao.cz</a> </p>
+                            <p><span class="icon-mobile"></span><a href="tel:+420777777777"> 775 510 215</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Kontaktní formulář</h2>
+                <div class="form">
+                    <form action="mailer.php" id="contact-form" name="contact-form" method="POST" enctype="multipart/form-data">
+                        <div class="form-field">
+                            <label for="name">Vaše jméno</label>
+                            <br>
+                            <input class="form-control" type="text" id="name" name="name" required> </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <br>
+                            <input class="form-control" type="email" id="email" name="email" required> </div>
+                        <div class="form-field">
+                            <label for="address">Adresa</label>
+                            <br>
+                            <input class="form-control" type="text" id="address" name="address" value="" required> </div>
+                        <div class="form-field">
+                            <label for="tel">Telefon</label>
+                            <br>
+                            <input class="form-control" type="tel" id="tel" name="tel" value="" required> </div>
+                        <div class="form-field">
+                            <label for="message">Vaše zpráva</label>
+                            <br>
+                            <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button id="submit-all" type="submit" class="button button-highlighted" form="contact-form" name="send" value="Odeslat">Odeslat</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
 	</main>
 	<footer>
 		<div class="contacts">
@@ -173,24 +175,34 @@
 				</div>
 			</div>
 			<div class="footer-box-nav">
-				<ul class="footer-box">
-					<li> <a class="link" href="index.html#nase-sluzby">Naše služby</a> </li>
-					<li> <a class="link" href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a> </li>
-					<li> <a class="link" href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a> </li>
-					<li> <a class="link" href="#o-nas">O nás</a> </li>
-					<li> <a class="link" href="reference.html">Reference</a> </li>
-					<li> <a class="link" href="cenik.html">Ceník</a> </li>
-					<li> <a class="link" href="kontakt.html">Kontakt</a> </li>
-				</ul>
-				<ul class="footer-box">
-					<li> <a class="link" href="https://form.geoline.org/index.php">Zákaznická administrace Progres</a> </li>
-					<li> <a class="link" href="https://form.geoline.org/cez.php">Zákaznická administrace ČEZ</a> </li>
-				</ul>
+                <h3>Navigace</h3>
+                <div class="footer-box-container">
+                    <ul class="footer-box">
+                        <li> <a class="link" href="index.html#nase-sluzby">Naše služby</a> </li>
+                        <li> <a class="link" href="nase-sluzby.html#katastr-nemovitosti">Katastr nemovitostí</a> </li>
+                        <li> <a class="link" href="nase-sluzby.html#inzenyrska-geodezie">Inženýrská geodézie</a> </li>
+                        <li> <a class="link" href="#o-nas">O nás</a> </li>
+                        <li> <a class="link" href="reference.html">Reference</a> </li>
+                        <li> <a class="link" href="cenik.html">Ceník</a> </li>
+                        <li> <a class="link" href="kontakt.html">Kontakt</a> </li>
+                    </ul>
+                    <ul class="footer-box">
+                        <li> <a class="link" href="https://form.geoline.org/index.php">Zákaznická administrace Progres</a> </li>
+                        <li> <a class="link" href="https://form.geoline.org/cez.php">Zákaznická administrace ČEZ</a> </li>
+                    </ul>
+                </div>
 			</div>
-			<div class="footer-box footer-box-icons"> <a class="button button-footer" href="https://goo.gl/maps/tL4XGtbSeiwCiP3p9"><span class="icon-location"></span></a> <a class="button button-footer" href="mailto:geoline@geoline.org"><span class="icon-envelop"></span></a> <a class="button button-footer" href="tel:+420485104234"><span class="icon-phone"></span></a> </div>
+			<div class="footer-box footer-box-icons">  
+                <div class="footer-box-map">
+                    <iframe class="iframe" frameborder="0" style="border:0; height: 250px; width: 400px;" src="https://www.google.com/maps/embed/v1/streetview?location=50.7329%2C15.0713&pano=Lt7zvpRaQKCvAvUg0qIf9g&key=AIzaSyC5Wpi96VSzFnSkPEealHiw0BbiSdVELEc&heading=102&pitch=1" allowfullscreen></iframe>
+                </div> 
+                <div class="footer-box-icons-container">
+                    <a class="button button-footer" href="https://goo.gl/maps/tL4XGtbSeiwCiP3p9"><span class="icon-location"></span></a> <a class="button button-footer" href="mailto:geoline@geoline.org"><span class="icon-envelop"></span></a> <a class="button button-footer" href="tel:+420485104234"><span class="icon-phone"></span></a> 
+                </div>
 		</div>
+        </div>
 		<div class="copyright">
-			<p>v0.8 © 2021 GEOLINE CZ v.o.s., Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
+			<p>v0.9 © 2021 GEOLINE CZ v.o.s., Made by <a href="https://svobodao.cz">Ondřej Svoboda</a></p>
 		</div> <a onclick="topFunction()" class="floating-button floating-button-top" id="topbtn" title="Go to top"><i class="fas fa-arrow-up"></i></a> </footer>
 	<script src="js/main.js" defer></script>
 </body>
