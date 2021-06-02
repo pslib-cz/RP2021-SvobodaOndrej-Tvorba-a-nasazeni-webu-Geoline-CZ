@@ -1,189 +1,186 @@
 /* table */
 
-.table  {
-    border-collapse:collapse;
-    border-spacing:0;
-    width: 100%;
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
 }
 
-.table__column{
-    border-color: #a27035;
-    border-style:solid;
-    border-width:1px;
-    overflow:hidden;
-    padding:10px 5px;
-    word-break:normal;
-
+.table__column {
+  border-color: #a27035;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
 }
 .table__head {
-    border-color: #a27035;
-    border-style:solid;
-    border-width:1px;
-    overflow:hidden;
-    padding:10px 5px;
-    word-break:normal;
+  border-color: #a27035;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
 }
 
 /* contact form */
-  .form {
-    width: 80%;
-    margin: auto;
-  }
-  
-  .form__field {
-    width: 100%;
-    margin-top: 1em;
+.form {
+  width: 80%;
+  margin: 2em auto;
+}
+
+.form__field {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.form__field__input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #a27035;
+  color: black;
+  border-radius: 6px;
+  background-color: #e6e6e6;
+}
+
+.form__field__input--tel {
+  width: auto;
+}
+
+.form__field__input--textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #a27035;
+  color: black;
+  border-radius: 6px;
+  background-color: #e6e6e6;
+}
+
+.form__submit__button {
+  margin: 0;
+}
+
+.form__submit__button:hover {
+  cursor: pointer;
+}
+
+/* company info */
+
+.company__company-info__text {
+  font-size: 1.25em;
+}
+
+/* gallery */
+.reference-container__picture-box {
+  margin: 0;
+}
+
+.reference-container__picture-box__img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.gallery__item {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  margin: 0;
+}
+
+.gallery__item__desc {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #a27035;
+  color: white;
+  z-index: 100;
+  padding: 0.5em;
+}
+
+.gallery__item:hover .gallery__item__desc {
+  display: block;
+}
+
+.gallery__item__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+  .reference-container {
+    display: flex;
     margin-bottom: 1em;
   }
-  
-  .form__field__input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 2px solid #a27035;
-    color: black;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    background-color:#e6e6e6;
-  }
-  
-  .form__field__input--tel {
-    width: auto;
-  }
-  
-  .form__field__input--textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 2px solid #a27035;
-    color: black;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    background-color: #e6e6e6;
-  }
-  
-  .form__submit__button {
-    margin: 0;
-  }
 
-  .form__submit__button:hover {
-    cursor: pointer;
-  }
-  
-  /* company info */
-  
-  .company__company-info__text {
-    font-size: 1.25em;
-  }
-  
-/* gallery */ 
   .reference-container__picture-box {
-    margin: 0;
+    width: 50%;
   }
 
-  .reference-container__picture-box__img {
-    width: 100%;
-    overflow: hidden;
+  .reference-container__description {
+    flex-basis: 50%;
+    width: 50%;
+    padding-left: 1em;
   }
-    
-  .gallery {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 10px 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .form {
+    width: 60%;
+  }
+
+  .company {
+    display: flex;
     gap: 10px;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    width: 80%;
+    margin: 0 auto;
   }
 
-  .gallery__item {
-    position: relative;
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    -webkit-transition: -webkit-transform ease-in-out 0.3s;
-    transition: -webkit-transform ease-in-out 0.3s;
-    -o-transition: -o-transform ease-in-out 0.3s;
-    -moz-transition: transform ease-in-out 0.3s, -moz-transform ease-in-out 0.3s;
-    transition: transform ease-in-out 0.3s;
-    transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s,
-      -moz-transform ease-in-out 0.3s, -o-transform ease-in-out 0.3s;
-    margin: 0;
+  .company__company-info,
+  .company__map {
+    flex-basis: 50%;
   }
-  
-  .gallery__item__desc {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #a27035;
-    color: white;
-    z-index: 100;
-    padding: 0.5em;
-  }
-  
-  .gallery__item:hover .gallery__item__desc{
-    display: block;
-  }
-  
-  .gallery__item__img {
+
+  .company__map__iframe {
+    aspect-ratio: 16 / 9;
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
   }
-  
-  @media screen and (min-width: 768px) {
-    .reference-container {
-      display: flex;
-      margin-bottom: 1em;
-    }
-  
-    .reference-container__picture-box {
-      width: 50%;
-    }
-  
-    .reference-container__description {
-      flex-basis: 50%;
-      width: 50%;
-      padding-left: 1em;
-    }
-  }
+}
 
-  @media screen and (min-width: 1024px) {
-    .company {
-        display: flex;
-        gap: 10px
-    }
-  
-    .company__company-info, .company__map {
-        flex-basis: 50%;
-    }
-  
+@media screen and (min-width: 1280px) {
+  .gallery {
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
   }
+}
 
-  @media screen and (min-width: 1280px) {
-    .gallery {
-      -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-auto-rows: 1fr;
-    }
+@media screen and (prefers-color-scheme: dark) {
+  .form__field__input {
+    background-color: #30323d;
+    color: white;
   }
-
-
-  @media screen and (prefers-color-scheme: dark) {
-    .form__field__input {
-      background-color: #30323d;
-      color: white;
-    }
-  
-  }
+}
